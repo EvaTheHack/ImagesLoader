@@ -1,0 +1,1 @@
+ImagesLoader.Console.exe -u https://news.google.com/news/?ned=us&hl=en -d D:\\test\\images

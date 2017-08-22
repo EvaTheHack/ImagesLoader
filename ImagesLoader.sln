@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImagesLoader.Core", "ImagesLoader.Core\ImagesLoader.Core.csproj", "{50F41435-F048-42FA-B521-0F1A8E23AB4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImagesLoader.Console", "ImagesLoader.Console\ImagesLoader.Console.csproj", "{DC2C5A65-3D4E-4D57-B96C-3FD232BABBAB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{50F41435-F048-42FA-B521-0F1A8E23AB4C} = {50F41435-F048-42FA-B521-0F1A8E23AB4C}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50F41435-F048-42FA-B521-0F1A8E23AB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F41435-F048-42FA-B521-0F1A8E23AB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F41435-F048-42FA-B521-0F1A8E23AB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F41435-F048-42FA-B521-0F1A8E23AB4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2C5A65-3D4E-4D57-B96C-3FD232BABBAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2C5A65-3D4E-4D57-B96C-3FD232BABBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2C5A65-3D4E-4D57-B96C-3FD232BABBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2C5A65-3D4E-4D57-B96C-3FD232BABBAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

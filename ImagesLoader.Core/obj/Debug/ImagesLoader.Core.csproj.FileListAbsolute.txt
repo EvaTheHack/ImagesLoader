@@ -1,0 +1,16 @@
+c:\users\rama\documents\visual studio 2017\Projects\ImagesLoader\ImagesLoader.Core\bin\Debug\ImagesLoader.Core.dll
+c:\users\rama\documents\visual studio 2017\Projects\ImagesLoader\ImagesLoader.Core\bin\Debug\ImagesLoader.Core.pdb
+c:\users\rama\documents\visual studio 2017\Projects\ImagesLoader\ImagesLoader.Core\bin\Debug\HtmlAgilityPack.dll
+c:\users\rama\documents\visual studio 2017\Projects\ImagesLoader\ImagesLoader.Core\bin\Debug\HtmlAgilityPack.pdb
+c:\users\rama\documents\visual studio 2017\Projects\ImagesLoader\ImagesLoader.Core\bin\Debug\HtmlAgilityPack.xml
+c:\users\rama\documents\visual studio 2017\Projects\ImagesLoader\ImagesLoader.Core\obj\Debug\ImagesLoader.Core.csprojResolveAssemblyReference.cache
+c:\users\rama\documents\visual studio 2017\Projects\ImagesLoader\ImagesLoader.Core\obj\Debug\ImagesLoader.Core.dll
+c:\users\rama\documents\visual studio 2017\Projects\ImagesLoader\ImagesLoader.Core\obj\Debug\ImagesLoader.Core.pdb
+C:\Users\EVA\Downloads\ImagesLoader\ImagesLoader.Core\bin\Debug\ImagesLoader.Core.dll
+C:\Users\EVA\Downloads\ImagesLoader\ImagesLoader.Core\bin\Debug\ImagesLoader.Core.pdb
+C:\Users\EVA\Downloads\ImagesLoader\ImagesLoader.Core\bin\Debug\HtmlAgilityPack.dll
+C:\Users\EVA\Downloads\ImagesLoader\ImagesLoader.Core\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\EVA\Downloads\ImagesLoader\ImagesLoader.Core\bin\Debug\HtmlAgilityPack.xml
+C:\Users\EVA\Downloads\ImagesLoader\ImagesLoader.Core\obj\Debug\ImagesLoader.Core.csprojResolveAssemblyReference.cache
+C:\Users\EVA\Downloads\ImagesLoader\ImagesLoader.Core\obj\Debug\ImagesLoader.Core.dll
+C:\Users\EVA\Downloads\ImagesLoader\ImagesLoader.Core\obj\Debug\ImagesLoader.Core.pdb
