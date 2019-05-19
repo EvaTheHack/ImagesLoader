@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace ImagesLoader.Console {
-    class Program {
+namespace ImagesLoader.Console
+{
+    class Program
+    {
+        private static ConfigProvider _config = new ConfigProvider();
 
-        private const string EXIT_REQUEST = "exit";
-        
+        private const string EXIT_REQUEST = "exit";   
 
         static void Main(string[] args)
         {
-            Config config = new Config();
+            var config = new Config();
             
-            string currentRequest = String.Empty;
+            var currentRequest = string.Empty;
 
             while ((currentRequest = GetNonEmptyStringFromConsole("type new command here -> ")) != EXIT_REQUEST)
                 ProcessRequest(config, currentRequest);
@@ -23,11 +23,11 @@ namespace ImagesLoader.Console {
             {
                 Core.ILogger logger = new ConsoleLogger();
 
-                string[] requestItems = request.Split(' ');
+                var requestItems = request.Split(' ');
 
-                Config result = ConfigProvider.FromArgs(requestItems);
+                var result = _config.FromArgs(requestItems);
 
-                Core.ImagesLoader loader = new Core.ImagesLoader(logger);
+                var loader = new Core.ImagesLoader(logger);
                 loader.FromUrl(result.Url, result.DirectoryForSaveFiles);
             }
             catch (Exception ex)
