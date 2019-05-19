@@ -6,14 +6,14 @@ using System.Net;
 
 namespace ImagesLoader.Core
 {
-    public class ImagesLoader {
+    public class ImagesLoader
+    {
 
+        private readonly ILogger _logger;
         public ImagesLoader(ILogger logger)
         {
-            this.logger = logger;
+            _logger = logger;
         }
-
-        private readonly ILogger logger;
 
         public void FromUrl(string url, string targetDirectory)
         {
@@ -21,17 +21,16 @@ namespace ImagesLoader.Core
             var pathForSave = pathProvider.PrepareDirectoryForUsing(targetDirectory, url);
             var imageUrls = GetAllImageUrls(url);
 
-
             foreach (var imageUrl in imageUrls)
             {
                 try
                 {
                     DownloadFromLinks(url, imageUrl, pathForSave);
-                    logger.ShowMessage($"Image from url[{ imageUrl}] was downloaded");
+                    _logger.ShowMessage($"Image from url[{ imageUrl}] was downloaded");
                 }
                 catch
                 {
-                    logger.ShowMessage(imageUrl + " has error or incorect");
+                    _logger.ShowMessage(imageUrl + " has error or incorect");
                 }
             }
             
@@ -50,7 +49,7 @@ namespace ImagesLoader.Core
             }
             catch
             {
-                logger.ShowMessage(url + " has error or incorect");
+                _logger.ShowMessage(url + " has error or incorect");
                 return new List<string>();
             }
         }
