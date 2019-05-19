@@ -17,57 +17,60 @@ namespace ImagesLoader.Core
 
         public void FromUrl(string url, string targetDirectory)
         {
-            PathProvider pathProvider = new PathProvider();
-            string pathForSave = pathProvider.PrepareDirectoryForUsing(targetDirectory, url);
-            List<string> imageUrls = GetAllImageUrls(url);
+            var pathProvider = new PathProvider();
+            var pathForSave = pathProvider.PrepareDirectoryForUsing(targetDirectory, url);
+            var imageUrls = GetAllImageUrls(url);
 
-            if (imageUrls != null)
+
+            foreach (var imageUrl in imageUrls)
             {
-                foreach (var imageUrl in imageUrls)
+                try
                 {
-                    try
-                    {
-                        DownloadFromLinks(url, imageUrl, pathForSave);
-                        logger.ShowMessage($"Image from url[{ imageUrl}] was downloaded");
-                    }
-                    catch
-                    {
-                        logger.ShowMessage(imageUrl + " has error or incorect");
-                    }
+                    DownloadFromLinks(url, imageUrl, pathForSave);
+                    logger.ShowMessage($"Image from url[{ imageUrl}] was downloaded");
+                }
+                catch
+                {
+                    logger.ShowMessage(imageUrl + " has error or incorect");
                 }
             }
+            
         }
 
-        private List<string> GetAllImageUrls ( string url ) {
-            
+        private List<string> GetAllImageUrls(string url)
+        {
             try
             {
                 var document = new HtmlWeb().Load(url);
-                var urls = document.DocumentNode.Descendants("img")
-                                                .Select(e => e.GetAttributeValue("src", null))
-                                                .Where(s => !String.IsNullOrEmpty(s));
-                return urls.ToList();
+                return document.DocumentNode
+                               .Descendants("img")
+                               .Select(e => e.GetAttributeValue("src", null))
+                               .Where(s => !string.IsNullOrEmpty(s))
+                               .ToList();
             }
             catch
             {
                 logger.ShowMessage(url + " has error or incorect");
-                return null;
+                return new List<string>();
             }
         }
 
         private void DownloadFromLinks(string url, string link, string pathToSave)
         {
-            PathProvider pathProvider = new PathProvider();
+            var pathProvider = new PathProvider();
 
             if (link.StartsWith("//"))
+            { 
                 link = "https:" + link;
+            }
 
             if (link.StartsWith("/"))
+            {
                 link = url + link;
-
-            
-            string fileName = pathToSave + @"\" + pathProvider.redactionUrl(link);
-            using (WebClient client = new WebClient())
+            }
+                
+            var fileName = pathToSave + @"\" + pathProvider.PrepareUrl(link);
+            using (var client = new WebClient())
             {
                 client.DownloadFile(link, fileName);
             }
